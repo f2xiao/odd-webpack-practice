@@ -1,12 +1,16 @@
 // import your function
-import myName from './myName';
+import User from './User.js';
 
 function component() {
   const element = document.createElement('div');
 
   // use your function!
-  element.textContent = myName('Cody');
-  return element;
+
+  const user = User("tom", 26);
+  // console.log(user); 
+  const name = user.printName();
+  console.log(name)
+
 }
 
-document.body.appendChild(component());
+component();
