@@ -1,21 +1,16 @@
 export default function (name, age) {
+	const capitalizedName = () => name.toUpperCase();
+	const printString = () => `---${capitalizedName()}---`;
 
-	const proto = {
-		printName: function () {
-			return `my name is ${this.name}`
-		},
-		printAge: function () {
-			console.log(this.age);
-		}
-	};
+	const proto = { printString };
+	// console.log(proto);
+	// console.log(Object);
+	// console.log(Object.prototype);
+	// console.log(Object.prototype.__prototype__);
 
-	const obj = Object.create(proto);
-	
-	obj.name = name;
-	obj.age = age;
-
-	return obj
+	return Object.create(proto, {
+		name:{value: name},
+		age:{value: age},
+	});
 }
-
-
 
