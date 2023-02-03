@@ -1,16 +1,26 @@
-export default function (name, age) {
-	const capitalizedName = () => name.toUpperCase();
-	const printString = () => `---${capitalizedName()}---`;
+const ancestor = {
+	init: function (values) {
+		Object.keys(values).forEach(key => this[key] = values[key]);
+		return this;
+	},
+	capitalizedName: function () {
+		return this.name.toUpperCase();
+	}
+}
+const proto = Object.create(ancestor);
 
-	const proto = { printString };
-	// console.log(proto);
-	// console.log(Object);
-	// console.log(Object.prototype);
-	// console.log(Object.prototype.__prototype__);
+proto.printString = function() {
+	return `---${this.capitalizedName()}---
+	I'm a ${this.isAdmin ? 'admin' : 'user'}.
+	`
+} 
 
-	return Object.create(proto, {
-		name:{value: name},
-		age:{value: age},
-	});
+proto.log = `long live the users.`
+
+export function User(name, age) {
+	return Object.create(proto).init({name, age});
 }
 
+export function Admin(name, age, isAdmin=true) {
+	return Object.create(proto).init({name, age, isAdmin});
+}

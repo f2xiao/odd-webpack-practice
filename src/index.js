@@ -1,11 +1,7 @@
 // import your function
-import User from './User.js';
+import {User, Admin} from './User.js';
 
-const Admin = function (name, age) {
-  const obj = User(name, age);
-  obj.isAdmin = true;
-  return obj;
-}
+
 
 function component() {
   const element = document.createElement('div');
@@ -14,13 +10,25 @@ function component() {
 
   const user = User("tom", 26);
   // console.log(user); 
-  const name = user.printString();
+  const nameString = user.printString();
+
+  console.log(nameString);
 
   const admin = Admin('pixie', 9);
 
   console.log(user);
   console.log(admin);
-  // console.log(admin.printString())
+  console.log(admin.printString());
+  console.log(user.printString());
+
+  console.log(user.__proto__ == admin.__proto__);
+  console.log(user.__proto__); // proto obj
+  console.log(user.__proto__.__proto__); // anscestor obj
+  console.log(user.__proto__.__proto__.__proto__); // Object.prototype or {}
+  console.log(user.__proto__.__proto__.__proto__.__proto__); // null
+
+  console.log(user.log);
+  console.log(admin.log);
 }
 
 component();
