@@ -1,5 +1,5 @@
 {
-  "name": "odd-webpack-practice",
+  "name": "odin-webpack-practice",
   "version": "1.0.0",
   "description": "webpack basic setup and how to bundle modules",
   "private": true,
