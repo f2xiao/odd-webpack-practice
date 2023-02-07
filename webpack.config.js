@@ -2,14 +2,14 @@
  const HtmlWebpackPlugin = require('html-webpack-plugin');
 
  module.exports = {
-   entry: {
+     mode: 'development',
+	entry: {
      index: './src/index.js',
      print: './src/print.js',
    },
    plugins: [
      new HtmlWebpackPlugin({
-       title: 'Output Management',
-     }),
+           title: 'Development',}),
    ],
    output: {
      filename: '[name].bundle.js',
