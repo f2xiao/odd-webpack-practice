@@ -1,10 +1,19 @@
 // import your function
 import {User, Admin} from './User.js';
+import './style.css';
+import Icon from './icon.png';
 
 function component(user) {
   const element = document.createElement('div');
   element.textContent = user.printString();
-  const usersContainer = document.querySelector("#users");
+element.classList.add('hello');
+	  // Add the image to our existing div.
+  const myIcon = new Image();
+  myIcon.src = Icon;
+
+  element.appendChild(myIcon);
+
+const usersContainer = document.querySelector("#users");
   usersContainer.appendChild(element);
 
   // use your function!
