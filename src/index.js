@@ -2,6 +2,8 @@
 import {User, Admin} from './User.js';
 import './style.css';
 import Icon from './icon.png';
+import Data from './data.xml';
+import Notes from './data.csv';
 
 function component(user) {
   const element = document.createElement('div');
@@ -30,18 +32,18 @@ const usersContainer = document.querySelector("#users");
   // console.log(user.__proto__.__proto__.__proto__.__proto__); // null
 
   // console.log(user.log);
+  console.log(Data);
+  console.log(Notes);
   // console.log(admin.log);
 }
 
-function render(moduleName,user, admin) {
+function render(moduleName,user) {
   const element = document.createElement('div');
   element.id = moduleName;
   document.body.appendChild(element);
   component(user);
-  component(admin);
 }
 
 const user = User("tom", 26);
-const admin = Admin('pixie', 9);
 
-render('users',user, admin);
+render('users',user);
