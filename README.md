@@ -45,8 +45,8 @@ webpack basic setup and how to bundle modules
     
 9. using a task runner
 
-
     automatically build the bundle with changes so no need to use command to do the build step
+    
 10.using a dev server
 
   
