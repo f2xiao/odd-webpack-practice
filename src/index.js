@@ -1,12 +1,12 @@
 // import your function
-import {User, Admin} from './User.js';
-import './style.css';
-import Icon from './icon.png';
-import Data from './data.xml';
-import Notes from './data.csv';
-import toml from './data.toml';
-import yaml from './data.yaml';
-import json from './data.json5';
+import { User } from "./User.js";
+import "./style.css";
+import Icon from "./icon.png";
+import Data from "./data.xml";
+import Notes from "./data.csv";
+import toml from "./data.toml";
+import yaml from "./data.yaml";
+import json from "./data.json5";
 
 console.log(toml.title); // output `TOML Example`
 console.log(toml.owner.name); // output `Tom Preston-Werner`
@@ -17,17 +17,17 @@ console.log(yaml.owner.name); // output `Tom Preston-Werner`
 console.log(json.title); // output `JSON5 Example`
 console.log(json.owner.name); // output `Tom Preston-Werner`
 
-function component(user) {
-  const element = document.createElement('div');
+function component (user) {
+  const element = document.createElement("div");
   element.textContent = user.printString();
-element.classList.add('hello');
-	  // Add the image to our existing div.
+  element.classList.add("hello");
+  // Add the image to our existing div.
   const myIcon = new Image();
   myIcon.src = Icon;
 
   element.appendChild(myIcon);
 
-const usersContainer = document.querySelector("#users");
+  const usersContainer = document.querySelector("#users");
   usersContainer.appendChild(element);
 
   // use your function!
@@ -49,8 +49,8 @@ const usersContainer = document.querySelector("#users");
   // console.log(admin.log);
 }
 
-function render(moduleName,user) {
-  const element = document.createElement('div');
+function render (moduleName, user) {
+  const element = document.createElement("div");
   element.id = moduleName;
   document.body.appendChild(element);
   component(user);
@@ -58,4 +58,4 @@ function render(moduleName,user) {
 
 const user = User("tom", 26);
 
-render('users',user);
+render("users", user);
